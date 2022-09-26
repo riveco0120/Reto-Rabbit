@@ -33,6 +33,11 @@ public class RabbitMQConfig {
         return new Queue("apartamento3AQueue", false);
     }
 
+    @Bean
+    Queue apartamentAll() {
+        return new Queue("apartamentAllAQueue", false);
+    }
+
 
     @Bean
     TopicExchange topicExchange() {
@@ -52,6 +57,11 @@ public class RabbitMQConfig {
     @Bean
     Binding apartament105ABinding(Queue apartament105AQueue, TopicExchange topicExchange) {
         return BindingBuilder.bind(apartament105AQueue).to(topicExchange).with(routingKey);
+    }
+
+    @Bean
+    Binding apartamentAll(Queue apartamentAll, TopicExchange topicExchange) {
+        return BindingBuilder.bind(apartamentAll).to(topicExchange).with("queue.*");
     }
 
     @Bean
