@@ -1,1 +1,9 @@
-
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    keys101: queue.floor1.apto.1, queue.floor1.*, queue.oddFloor
+    keys103: queue.floor1.apto.3, queue.floor1.*, queue.oddFloor
+    keys105: queue.floor2.apto.5, queue.floor2.*, queue.oddFloor
