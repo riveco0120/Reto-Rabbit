@@ -18,44 +18,41 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitMQConfig {
 
     private String routingKey = "queue.apartamenOdd ";
-
     @Bean
-    Queue Apartment101Queue() {
-        return new Queue("Apartment101", false);
+    Queue apartament101AQueue() {
+        return new Queue("apartamento1AQueue", false);
     }
 
     @Bean
-    Queue Apartment103Queue() {
-        return new Queue("Apartment103", false);
+    Queue apartament103AQueue() {
+        return new Queue("apartamento3AQueue", false);
     }
 
     @Bean
-    Queue Apartment105Queue() {
-        return new Queue("Apartment105", false);
+    Queue apartament105AQueue() {
+        return new Queue("apartamento3AQueue", false);
     }
+
 
     @Bean
     TopicExchange topicExchange() {
         return new TopicExchange("topic-exchange");
     }
 
-
     @Bean
-    Binding bindingApartame101(Queue apartamento1AQueue, TopicExchange topicExchange) {
-        return BindingBuilder.bind(apartamento1AQueue).to(topicExchange).with("queue.apartamenOdd");
+    Binding apartament101ABinding(Queue apartament101AQueue, TopicExchange topicExchange) {
+        return BindingBuilder.bind(apartament101AQueue).to(topicExchange).with(routingKey);
     }
 
     @Bean
-    Binding bindingApartame102(Queue apartamento3AQueue, TopicExchange topicExchange) {
-        return BindingBuilder.bind(apartamento3AQueue).to(topicExchange).with("queue.apartamenOdd");
+    Binding apartament103ABinding(Queue apartament103AQueue, TopicExchange topicExchange) {
+        return BindingBuilder.bind(apartament103AQueue).to(topicExchange).with(routingKey);
     }
-
 
     @Bean
-    Binding bindingApartame105(Queue apartamento3AQueue, TopicExchange topicExchange) {
-        return BindingBuilder.bind(apartamento3AQueue).to(topicExchange).with("queue.apartamenOdd");
+    Binding apartament105ABinding(Queue apartament105AQueue, TopicExchange topicExchange) {
+        return BindingBuilder.bind(apartament105AQueue).to(topicExchange).with(routingKey);
     }
-
 
     @Bean
     public MessageConverter jsonMessageConverter() {
