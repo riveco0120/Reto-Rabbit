@@ -32,7 +32,7 @@ public class RabbitMQConfig {
     Queue apartament105AQueue() {
         return new Queue("apartamento5AQueue", false);
     }
-    @Bean
+    
     TopicExchange topicExchange() {
         return new TopicExchange("topic-exchange");
     }
