@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/broker/topic/")
+@RequestMapping(value = "/broker/topic")
 public class ResourceREST {
     @Autowired
     private AmqpTemplate amqpTemplate;

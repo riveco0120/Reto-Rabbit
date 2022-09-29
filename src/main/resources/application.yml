@@ -1,9 +1,8 @@
 spring:
   rabbitmq:
-    host: localhost
+    host: hawk-01.rmq.cloudamqp.com
     port: 5672
-    username: guest
-    password: guest
-    keys101: queue.floor1.apto.1, queue.floor1.*, queue.oddFloor
-    keys103: queue.floor1.apto.3, queue.floor1.*, queue.oddFloor
-    keys105: queue.floor2.apto.5, queue.floor2.*, queue.oddFloor
+    virtual-host: xzuwpdey
+    username: xzuwpdey
+    password: 5q34G8mMHOiXxf00oZvhi1jWh4lDNcXM
+
