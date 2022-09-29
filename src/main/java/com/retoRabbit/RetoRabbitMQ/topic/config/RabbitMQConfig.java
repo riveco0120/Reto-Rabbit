@@ -1,4 +1,4 @@
-package com.retoRabbit.RetoRabbitMQ.config;
+package com.retoRabbit.RetoRabbitMQ.topic.config;
 
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.amqp.core.Binding;
@@ -34,12 +34,6 @@ public class RabbitMQConfig {
     }
 
     @Bean
-    Queue apartamentAll() {
-        return new Queue("apartamentAllAQueue", false);
-    }
-
-
-    @Bean
     TopicExchange topicExchange() {
         return new TopicExchange("topic-exchange");
     }
@@ -57,11 +51,6 @@ public class RabbitMQConfig {
     @Bean
     Binding apartament105ABinding(Queue apartament105AQueue, TopicExchange topicExchange) {
         return BindingBuilder.bind(apartament105AQueue).to(topicExchange).with(routingKey);
-    }
-
-    @Bean
-    Binding apartamentAll(Queue apartamentAll, TopicExchange topicExchange) {
-        return BindingBuilder.bind(apartamentAll).to(topicExchange).with("queue.*");
     }
 
     @Bean
