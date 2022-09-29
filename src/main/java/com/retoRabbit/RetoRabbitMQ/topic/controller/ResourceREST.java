@@ -1,4 +1,4 @@
-package com.retoRabbit.RetoRabbitMQ.controller;
+package com.retoRabbit.RetoRabbitMQ.topic.controller;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
